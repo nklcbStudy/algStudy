@@ -6,31 +6,16 @@ public class B14720 {
 
 	public static int solve(int[] arr) {
 
-		int j = 0;
-		int count = 1; // 맨 처음에는 딸기우유를 무조건 한 팩 마시기 때문
-		while (j < arr.length) {
-			if (arr[j] == 0) {
-				for (int i = j + 1; i < arr.length; i++) {
-					switch (arr[i - 1]) {
-					case 0:
-						if (arr[i] == 1) {
-							count++;
-						}
-						break;
-					case 1:
-						if (arr[i] == 2) {
-							count++;
-						}
-						break;
-					case 2:
-						if (arr[i] == 0) {
-							count++;
-						}
-						break;
-					}
-				}
+		int milk = 0; // 현재 영학이가 있는 우윳집
+		int count = 0; // 먹는 우유 개수
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == milk) {
+				count++;
+				milk++;
 			}
-			j++;
+			if (milk == 3) {
+				milk = 0;
+			}
 		}
 
 		return count;
