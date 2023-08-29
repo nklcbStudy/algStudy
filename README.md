@@ -36,7 +36,7 @@
 
 <br>
 
-### 7. Commit 규칙
+## 7. Commit 규칙
 
 
 <br>
